@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>日本語組版テスト</title>
+    <style>
+      .eighth-em-margin-both {
+        /* display: inline; */
+        margin: 0 0.125em;
+      }
+      .quarter-em-block {
+        display: inline-block;
+        width: 0.25em;
+      }
+      .quarter-em-spacing {
+        letter-spacing: 0.25em;
+      }
+      .quarter-em-margin-both {
+        margin: 0 0.25em;
+      }
+      .quarter-em-margin-right {
+        margin-right: 0.25em;
+      }
+      .quarter-em-padding-both {
+        padding: 0 0.25em;
+      }
+      .half-em-block {
+        display: inline-block;
+        width: 0.5em;
+      }
+      .third-em-block {
+        display: inline-block;
+        width: calc(1em / 3);
+      }
+      .full-em-block {
+        display: inline-block;
+        width: 1em;
+      }
+      .minus-half-em-spacing {
+        letter-spacing: -0.5em;
+      }
+      .minus-half-em-margin-left {
+        margin-left: -0.5em;
+      }
+      .minus-half-em-margin-right {
+        margin-right: -0.5em;
+      }
+      .indent-1em {
+        text-indent: 1em;
+      }
+      .indent-half-em {
+        text-indent: 0.5em;
+      }
+      .indent-latin {
+        text-indent: 6em;
+      }
+
+      .indicator {
+        padding: 0 0.5em;
+        background-color: red;
+        border: 1px solid;
+      }
+      .indicator2 {
+        background-color: red;
+        color: white;
+        border: 1px solid;
+        border-color: black;
+      }
+      .indicator3 {
+        text-decoration: underline;
+      }
+      .box {
+        position: relative;
+        border: 1px solid;
+        display: block;
+        margin: 4em;
+        padding: 1em;
+        padding-top: 4em;
+      }
+      .box-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid;
+        border-top: none;
+        border-left: none;
+        display: inline-block;
+        margin-bottom: 1em;
+        padding: 1em;
+      }
+      .box-title + .box {
+        margin-top: 0em;
+      }
+      body {
+        font-family: Helvetica, 源ノ角ゴシック, "BIZ UDPゴシック", "Yu Gothic",
+          Meiryo, sans-serif;
+        padding: 2em;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+      .fontset-default {
+        font-family: "源ノ角ゴシック HW", "BIZ UDゴシック", "MS Gothic",
+          "Osaka－等幅", Osaka-mono, monospace;
+      }
+      .fontset-extrawide {
+        font-family: "Wide Latin", "Perpetua Titling MT", "Rockwell Extra Bold",
+          "Skia Black Extended", "源ノ角ゴシック HW", "MS Gothic",
+          "BIZ UDゴシック", monospace;
+      }
+      p:lang(ja) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>半角スペースに代わる和欧間アキに関する考察</h1>
+    <h2>
+      第<span class="quarter-em-block"></span>1<span
+        class="quarter-em-block"
+      ></span
+      >章　和欧間のアキを正しく指定した場合と半角スペースで代用した場合の比較
+    </h2>
+    <div class="box">
+      <div class="box-title">
+        例<span class="quarter-em-block"> </span>/ Example
+      </div>
+      <p>
+        仮名・漢字と<span class="quarter-em-block"></span>Alphanumerics<span
+          class="quarter-em-block"
+        ></span
+        >の間に、漢字の幅の<span class="quarter-em-block"></span>1/4<span
+          class="quarter-em-block"
+        ></span
+        >の幅のスペース（アキ）を空けるのが正式な<span
+          class="quarter-em-block"
+        ></span
+        >Rule<span class="quarter-em-block"></span>です。<span
+          class="indicator"
+        ></span
+        ><br />
+        仮名・漢字と Alphenumerics の間に、漢字の幅の 1/4
+        の幅のスペース（アキ）を空けるのが正式な Rule です。<span
+          class="indicator"
+        ></span
+        ><br />
+      </p>
+      <p class="fontset-default">
+        一<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >三<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >五<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >七<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >九<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >一<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >三<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        ><span class="indicator2">字</span><br />
+        <span class="indicator3">字字字</span>一三五七九一三<span
+          class="quarter-em-block"
+        ></span
+        >mmmmmmm<span class="quarter-em-block"></span
+        ><span class="indicator2">字</span>
+      </p>
+      <p class="fontset-default">
+        一 m 三 m 五 m 七 m 九 m 一 m 三 m <span class="indicator2">字</span
+        ><br />
+        <span class="indicator3">字字字</span>一三五七九一三 mmmmmmm
+        <span class="indicator2">字</span>
+      </p>
+      <p class="fontset-extrawide">
+        一<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >三<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >五<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >七<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >九<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >一<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        >三<span class="quarter-em-block"></span>m<span
+          class="quarter-em-block"
+        ></span
+        ><span class="indicator2">字</span><br />
+        <span class="indicator3">字字字</span>一三五七九一三<span
+          class="quarter-em-block"
+        ></span
+        >mmmmmmm<span class="quarter-em-block"></span
+        ><span class="indicator2">字</span>
+      </p>
+      <p class="fontset-extrawide">
+        一 m 三 m 五 m 七 m 九 m 一 m 三 m <span class="indicator2">字</span
+        ><br />
+        <span class="indicator3">字字字</span>一三五七九一三 mmmmmmm
+        <span class="indicator2">字</span>
+      </p>
+    </div>
+    <p>
+      上：和欧間のアキを、0.25<span class="quarter-em-block"></span>em<span
+        class="quarter-em-block"
+      ></span
+      >の<span class="quarter-em-block"></span><code>width</code
+      ><span class="quarter-em-block"></span>属性と<span
+        class="quarter-em-block"
+      ></span
+      ><code>display: inline-block</code
+      ><span class="quarter-em-block"></span>属性を指定した<span
+        class="quarter-em-block"
+      ></span
+      ><code>&lt;span&gt;</code
+      ><span class="quarter-em-block"></span>タグで実装した場合の例<br />
+      下：和欧間のアキを、欧文間隔（半角スペース、すなわち<span
+        class="quarter-em-block"
+      ></span
+      ><code>U+0020</code>）で代用した場合の例
+    </p>
+    <p class="indent-half-em">
+      「字字字」が入っていない方では、漢数字<span class="minus-half-em-spacing"
+        >・</span
+      >「字」と「m」の間に<span class="quarter-em-block"></span>14<span
+        class="quarter-em-block"
+      ></span
+      >個のアキが入っている。一方<span class="minus-half-em-spacing">、</span
+      >「字字字」が入っている方では、2<span class="quarter-em-block"></span
+      >個のアキしか入っていない。正しく四分アキになっていれば、アキの差（1<span
+        class="quarter-em-spacing"
+        >2</span
+      >個）は、全角文字、すなわち「字」<span class="quarter-em-spacing">3</span
+      >文字分となり、行末の赤部分が揃う、という理屈である。（1<span
+        class="quarter-em-spacing"
+        >2÷4＝</span
+      >3）欧文間隔で代用した方は、行末の赤部分が揃わないことから、正しい四分アキになっていないことがわかる。欧文フォントを変えると、四分アキに対する幅が変化することから、アキ量が欧文フォントに依存することがわかる。
+    </p>
+    <h2>
+      第<span class="quarter-em-margin-both">2</span
+      >章　アキの各実装方法とその比較
+    </h2>
+    <ul>
+      <li>
+        <code>padding</code
+        ><span class="eighth-em-margin-both"></span>または<span
+          class="quarter-em-margin-both"
+          ><code>margin</code></span
+        >を利用した<span class="quarter-em-margin-both"
+          ><code>&lt;span&gt;</code></span
+        >等のタグを用いた手法
+      </li>
+      <li>
+        横幅を指定した<span class="quarter-em-block"></span
+        ><code>inline-block</code
+        ><span class="quarter-em-block"></span>要素の<span
+          class="quarter-em-block"
+        ></span
+        ><code>&lt;span&gt;</code
+        ><span class="quarter-em-block"></span>等のタグを利用する手法
+      </li>
+      <li>
+        <code>letter-spacing</code
+        ><span class="quarter-em-block"></span>を利用する手法
+      </li>
+    </ul>
+    <p>の<span class="quarter-em-margin-both">3</span>つが考えられる。</p>
+    <p class="indent-1em">
+      一番上の方法は、和文に囲まれた英数字を囲う使い方が可能である<span
+        class="minus-half-em-margin-right"
+        >。</span
+      >（例：第<span class="quarter-em-margin-both">1</span>章）<span
+        class="quarter-em-margin-right"
+        ><code>margin</code></span
+      >を利用する場合、負の値を指定可能である。<span
+        class="quarter-em-margin-right"
+        ><code>padding</code></span
+      >は負の値を指定できない。負の値は、「括弧<span
+        class="minus-half-em-margin-right"
+        >」</span
+      >「句読点<span class="minus-half-em-margin-right">」</span>「中点<span
+        class="minus-half-em-margin-right"
+        >」</span
+      ><span class="minus-half-em-margin-right">「</span
+      >（セミ）コロン」が連続した場合に、それらの間隔を詰めるのに使用することができる。英数字をタグの中に入れるだけでなく、中に要素がないタグをアキを入れたい箇所に挿入することもできる。
+    </p>
+    <p class="indent-1em">
+      2<span class="quarter-em-block"></span
+      >番目の方法は、もっぱらアキを入れたい箇所に要素がないタグを挿入することで行われる。中に空白または改行を入れ、コピペすると空白がついてくるという芸当ができる。
+    </p>
+    <p class="indent-1em">
+      最後の方法は、連続してアキを入れたい場合に効果を発揮する。例えば、「<span
+        class="quarter-em-spacing"
+        >1gのA</span
+      >を投入する」といった文がある場合、「<span class="quarter-em-spacing"
+        >1gの</span
+      >A」を単一<span class="quarter-em-spacing">の</span
+      ><code>&lt;span<span class="quarter-em-spacing">&gt;</span></code
+      >タグに入れることで、アキの挿入が完了する。
+    </p>
+    <h2><span class="quarter-em-spacing">第3</span>章　本手法のデメリット</h2>
+    <p class="indent-1em">
+      本手法は、総じて段落中の折り返しに弱い。段落中の折り返しが、本手法で挿入されたアキ要素に差し掛かると、アキ要素が行頭に移動し、余計な空白が行頭に挿入されてしまう恐れがある。また<span
+        class="minus-half-em-margin-right"
+        >、</span
+      >（We<span class="quarter-em-margin-right">b</span
+      >ではあまり一般的ではないが）両端揃えでも、きれいに行の両端が揃わず、右側に空白が入ってしまうおそれがある。また、括弧類などの天付きへの対応もいまいちである。
+    </p>
+  </body>
+</html>
